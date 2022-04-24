@@ -18,26 +18,26 @@
                 </li>
 
                 <li>
-                    <a href="{{ '/' . Auth::user()->username . '/queues/' }}">
-                        <i class="mdi mdi-invert-colors"></i>
+                    <a href="{{ '/' . Auth::user()->username . '/albums/' }}">
+                        <i class="mdi mdi-image-album"></i>
                         {{-- <span class="badge badge-dark badge-pill float-right">2</span> --}}
                         <span> Albums</span>
                     </a>
                 </li>
 
-                {{-- <li>
-                    <a href="javascript: void(0);" class="waves-effect waves-light">
-                        <i class="mdi mdi-layers"></i>
-                        <span> Organizations </span>
-                    </a>
-                </li> --}}
-
                 <li>
+                    <a href="javascript: void(0);" class="waves-effect waves-light">
+                        <i class="mdi mdi-format-list-bulleted"></i>
+                        <span> Playlists </span>
+                    </a>
+                </li>
+
+                <!-- <li>
                     <a href="#" class="waves-effect waves-light">
                         <i class="mdi mdi-calendar"></i>
                         <span> Users </span>
                     </a>
-                </li>
+                </li> -->
                 <li>
                     <a href="#" class="waves-effect waves-light">
                         <i class="mdi mdi-settings-outline"></i>

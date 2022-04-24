@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Album;
 use Illuminate\Http\Request;
+use App\Models\User;
+use Auth;
 
 class AlbumController extends Controller
 {
@@ -14,7 +16,14 @@ class AlbumController extends Controller
      */
     public function index()
     {
-        //
+        return  view('album.create');
+    }
+
+    public function list($username)
+    {
+        return view('album.list', [
+            'user' => User::where('username', $username)->first()
+        ]);
     }
 
     /**
@@ -25,6 +34,17 @@ class AlbumController extends Controller
     public function create()
     {
         //
+    }
+    
+    public function createRandomIdentifier($length = 6)
+    {
+        $characters = 'aceimnorsuvwxz';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
     }
 
     /**

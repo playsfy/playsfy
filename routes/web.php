@@ -2,9 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\QueueController;
+use App\Http\Controllers\UserController; 
 use App\Http\Controllers\DeviceController;
+use App\Http\Controllers\AlbumController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,15 +35,10 @@ Route::group(['middleware' => 'auth'], function(){
 
     Route::get('/user:image:remove', [UserController::class, 'imageRemove']);
 
-    Route::get('/organization/new', [OrganizationController::class, 'index']);
+    Route::get('/album/new', [AlbumController::class, 'index']);
 
-    Route::get('/queue/new', [QueueController::class, 'index']);
+    Route::post('/album/create', [AlbumController::class, 'store']);
 
-    Route::post('/queue/create', [QueueController::class, 'store']);
-
-    Route::post('/queue/transfer/{queId}', [QueueController::class, 'transfer']);
-
-    Route::post('/queue/delete/{queId}', [QueueController::class, 'destroy']);
 
     Route::get('/notifications:markAsRead', function(){
 		auth()->user()->unreadNotifications->markAsRead();
@@ -64,7 +59,6 @@ Route::group(['prefix' => '{username}', 'middleware' => ['auth']], function ($us
 
     Route::get('/profile:edit', [UserController::class, 'update']);
 
-    Route::get('/queues', [QueueController::class, 'list']);
+    Route::get('/albums', [AlbumController::class, 'list']);
 
-    Route::get('/{queue}', [QueueController::class, 'show']);
 });

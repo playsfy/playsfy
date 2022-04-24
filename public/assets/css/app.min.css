@@ -511,7 +511,7 @@ body.enlarged {
 
 .left-side-menu-light .navbar-custom .app-search .btn {
 	background-color: #3e4a5a;
-	color: rgba(255, 255, 255, .7)
+	color: rgba(255, 255, 255, .7);
 }
 
 .left-side-menu-light .navbar-custom .button-menu-mobile {
@@ -689,7 +689,8 @@ body.enlarged {
 	border-color: transparent;
 	border-radius: 0 30px 30px 0;
 	-webkit-box-shadow: none!important;
-	box-shadow: none!important
+	box-shadow: none!important;
+	height: 2.4em;
 }
 
 .navbar-custom .button-menu-mobile {
