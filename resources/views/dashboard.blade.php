@@ -11,7 +11,7 @@
                         <li class="breadcrumb-item active">Dashboard</li>
                     </ol>
                 </div>
-                <h4 class="page-title">Dashboard</h4>
+                <h4 class="page-title">dashboard</h4>
             </div>
         </div>
     </div>
@@ -24,8 +24,8 @@
                             class="mdi mdi-chart-areaspline font-30 widget-icon rounded-circle avatar-title text-primary"></i>
                     </div>
                     <div class="wigdet-one-content">
-                        <p class="m-0 text-uppercase font-weight-bold text-muted" title="Statistics">Queues</p>
-                        <h2><span data-plugin="counterup">{{ $queues }}</span> <i
+                        <p class="m-0 text-uppercase font-weight-bold text-muted" title="Statistics">Albums</p>
+                        <h2><span data-plugin="counterup">{{-- $queues --}}</span> <i
                                 class="mdi mdi-arrow-up text-success font-24"></i>
                         </h2>
                         <p class="text-muted m-0"><span class="font-weight-medium">Last:</span> 30.4k</p>
@@ -43,9 +43,9 @@
                         <i class="mdi mdi-layers font-30 widget-icon rounded-circle avatar-title text-warning"></i>
                     </div>
                     <div class="wigdet-one-content">
-                        <p class="m-0 text-uppercase font-weight-bold text-muted" title="User This Month">Ratings
+                        <p class="m-0 text-uppercase font-weight-bold text-muted" title="User This Month">Tracks
                         </p>
-                        <h2><span data-plugin="counterup">2410</span> <i class="mdi mdi-arrow-up text-success font-24"></i>
+                        <h2><span data-plugin="counterup">240</span> <i class="mdi mdi-arrow-up text-success font-24"></i>
                         </h2>
                         <p class="text-muted m-0"><span class="font-weight-medium">Last:</span> 10.33k</p>
                     </div>
@@ -61,8 +61,8 @@
                         <i class="mdi mdi-av-timer font-30 widget-icon rounded-circle avatar-title text-danger"></i>
                     </div>
                     <div class="wigdet-one-content">
-                        <p class="m-0 text-uppercase font-weight-bold text-muted" title="Statistics">To do</p>
-                        <h2><span data-plugin="counterup">352</span> <i class="mdi mdi-arrow-up text-success font-24"></i>
+                        <p class="m-0 text-uppercase font-weight-bold text-muted" title="Statistics">Playlists</p>
+                        <h2><span data-plugin="counterup">32</span> <i class="mdi mdi-arrow-up text-success font-24"></i>
                         </h2>
                         <p class="text-muted m-0"><span class="font-weight-medium">Last:</span> 956</p>
                     </div>
@@ -78,7 +78,7 @@
                         <i class="mdi mdi-post-outline font-30 widget-icon rounded-circle avatar-title text-success"></i>
                     </div>
                     <div class="wigdet-one-content">
-                        <p class="m-0 text-uppercase font-weight-bold text-muted" title="User Today">Posts</p>
+                        <p class="m-0 text-uppercase font-weight-bold text-muted" title="User Today">Loved Songs</p>
                         <h2><span data-plugin="counterup">895</span> <i class="mdi mdi-arrow-down text-danger font-24"></i>
                         </h2>
                         <p class="text-muted m-0"><span class="font-weight-medium">Last:</span> 1250</p>
@@ -92,6 +92,7 @@
         <div class="col-xl-12 col-md-12">
             <div class="card widget-box-one border border-dark">
                 <div class="card-body">
+                    <p>Listen Chart</p>
                     @livewire('components.contribution-chart')
                 </div>
             </div>
