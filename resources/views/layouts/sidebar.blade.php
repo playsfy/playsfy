@@ -24,20 +24,18 @@
                         <span> Albums</span>
                     </a>
                 </li>
-
                 <li>
                     <a href="javascript: void(0);" class="waves-effect waves-light">
                         <i class="mdi mdi-format-list-bulleted"></i>
                         <span> Playlists </span>
                     </a>
                 </li>
-
-                <!-- <li>
+                <li>
                     <a href="#" class="waves-effect waves-light">
-                        <i class="mdi mdi-calendar"></i>
-                        <span> Users </span>
+                        <i class="mdi mdi-heart"></i>
+                        <span> Loved Songs </span>
                     </a>
-                </li> -->
+                </li>
                 <li>
                     <a href="#" class="waves-effect waves-light">
                         <i class="mdi mdi-settings-outline"></i>

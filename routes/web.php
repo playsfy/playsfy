@@ -37,7 +37,7 @@ Route::group(['middleware' => 'auth'], function(){
 
     Route::get('/album/new', [AlbumController::class, 'index']);
 
-    Route::post('/album/create', [AlbumController::class, 'store']);
+    Route::post('/album/create', [AlbumController::class, 'create']);
 
 
     Route::get('/notifications:markAsRead', function(){
@@ -60,5 +60,7 @@ Route::group(['prefix' => '{username}', 'middleware' => ['auth']], function ($us
     Route::get('/profile:edit', [UserController::class, 'update']);
 
     Route::get('/albums', [AlbumController::class, 'list']);
+
+    Route::get('/albums/{albumid}', [AlbumController::class, 'show']);
 
 });

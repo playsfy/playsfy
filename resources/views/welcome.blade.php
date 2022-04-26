@@ -6,8 +6,7 @@
             <div class="row justify-content-center fullscreen align-items-center">
                 <div class="col-lg-5 col-md-8 home-banner-left">
                     <h1 class="text-white">
-                        Calculate value to product
-                        or organization
+                    100% free music app. You're the Listener and Artist
                     </h1>
                     <p class="mx-auto text-white  mt-20 mb-40">
                         In the situation you can find your product or service strenths and weaknesses and execute new ideas to improve your product or service.

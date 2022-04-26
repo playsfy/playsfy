@@ -31,9 +31,54 @@ class AlbumController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+
+        $validated = $request->validate([
+            'albumname' => 'required | max:255',
+            'artistname' => 'required | max:64',
+            'year' => 'required'
+            //'albumart' => 'required'
+        ]);
+
+        $unq; $loopx = true;
+        while($loopx) {
+            $unq = $this->createRandomIdentifier(3) . '-' . $this->createRandomIdentifier(3);
+            if(Album::where('identifier' , $unq)->count() == 0) {
+                $loopx = false;
+            } 
+            else {
+                $loopx = true;
+            }
+        }
+
+        if($request->hasFile('albumart')){
+            $filenameWithExt = $request->file('albumart')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('albumart')->getClientOriginalExtension();
+            $fileNameToStore= 'music_album_'.time().'.'.$extension;
+            $path = $request->file('albumart')->move('uploads/images/albums', $fileNameToStore);
+        } else {
+            $fileNameToStore = null;
+        }
+
+        $data = new Album;
+
+        $data->identifier = $unq;
+        $data->title = $request->albumname;
+        $data->artist = $request->artistname;
+        $data->year = $request->year;
+        $data->description = $request->description;
+        $data->art = $fileNameToStore;
+        $data->user_id = Auth::user()->id;
+
+         
+        if ($data->save()) {
+            $request->session()->flash('success', 'Successfully added album');
+            return redirect('/'.Auth::user()->username.'/albums');
+        } 
+        
+        //dd($request->all());
     }
     
     public function createRandomIdentifier($length = 6)
@@ -64,9 +109,13 @@ class AlbumController extends Controller
      * @param  \App\Models\Album  $album
      * @return \Illuminate\Http\Response
      */
-    public function show(Album $album)
+    public function show(Album $album, $username, $albumid)
     {
-        //
+        $albuminfo = $album->where('identifier', $albumid)->first();
+
+        return view('album.show', [
+            'album' => $albuminfo
+        ]);
     }
 
     /**

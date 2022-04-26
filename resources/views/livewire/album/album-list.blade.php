@@ -16,16 +16,19 @@
         <div class="col-xl-4 col-md-6">
             <div class="card widget-box-three border border-dark">
                 <div class="card-body">
-                    <a href="/{{ $user->username }}/{{ $albums->identifier }}">
+                    <a href="/{{ $user->username }}/albums/{{ $album->identifier }}">
                         <div class="bg-icon float-left avatar-lg text-center bg-light rounded-circle">
+                            @if($album->art)
+
+                            @else
                             <i class="ti-star h2 text-warning m-0 avatar-title"></i>
+                            @endif
                         </div>
                         <div class="text-right">
 
-                            <p class="font-weight-medium text-dark text-truncate">{{ $albums->name }}</p>
+                            <p class="font-weight-medium text-dark text-truncate">{{ $album->title }}</p>
 
-                            <span
-                                class="sub-title text-muted">{{ substr($albums->description, 0, 30) . '...' }}</span>
+                            <span class="sub-title text-muted">{{ substr($album->description, 0, 30) . '...' }}</span>
                         </div>
                     </a>
                 </div>

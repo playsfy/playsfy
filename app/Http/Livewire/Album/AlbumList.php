@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Album;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\User;
+use App\Models\Album;
 use Auth;
 
 class AlbumList extends Component
@@ -15,9 +16,8 @@ class AlbumList extends Component
 
     public function mount()     
     {
-        $this->user = User::where('id', $this->userid)->first();
-        //$this->queues = Queue::where('user_id', $this->userid)->get();
-        $this->albums = [];
+        $this->user = User::where('id', $this->userid)->first(); 
+        $this->albums = Album::where('user_id', $this->userid)->get();
     }
     public function render()
     {
@@ -27,7 +27,7 @@ class AlbumList extends Component
         }
         else {
             //$this->queues = Queue::where('user_id', $this->userid)->get();
-            $this->albums = [];
+            $this->albums = Album::where('user_id', $this->userid)->get();
         } 
         return view('livewire.album.album-list');
     }

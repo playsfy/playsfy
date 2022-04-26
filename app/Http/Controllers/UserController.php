@@ -76,7 +76,7 @@ class UserController extends Controller
             $filenameWithExt = $request->file('profile_image')->getClientOriginalName();
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
             $extension = $request->file('profile_image')->getClientOriginalExtension();
-            $fileNameToStore= $filename.'_'.time().'.'.$extension;
+            $fileNameToStore= 'user_image_'.time().'.'.$extension;
             $path = $request->file('profile_image')->move('uploads/images/users', $fileNameToStore);
         } else {
             $fileNameToStore = null;
