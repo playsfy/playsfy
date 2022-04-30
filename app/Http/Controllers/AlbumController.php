@@ -57,7 +57,7 @@ class AlbumController extends Controller
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
             $extension = $request->file('albumart')->getClientOriginalExtension();
             $fileNameToStore= 'music_album_'.time().'.'.$extension;
-            $path = $request->file('albumart')->move('uploads/images/albums', $fileNameToStore);
+            $path = $request->file('albumart')->move('uploads/images/album', $fileNameToStore);
         } else {
             $fileNameToStore = null;
         }

@@ -25,9 +25,12 @@
                             <small>{{$album->year}}</small>
                          <p>{{$album->description}}</p>
  
-                        <div class="card widget-box-one border border-secondary bg-soft-secondary">
-                           <h6>Ullam Urukuthaiya...</h6>
-                           <small>5 mins</small><small>180 times played</small> 
+
+                        <div class="card card-border card-dark">
+                            <div class="card-header border-dark bg-transparent"> 
+                                <p>Ullam Urukuthaiya...</p>
+                                
+                            </div>
                         </div>
 
 

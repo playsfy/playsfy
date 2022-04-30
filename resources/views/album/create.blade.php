@@ -21,7 +21,7 @@
                 <div class="row">
                     <div class="col-lg-6 mt-4">
                         <h4 class="header-title">Set up your Album</h4>
-                        <form action="/album/create" method="POST">
+                        <form action="/album/create" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <label for="Album"><i class="mdi mdi-tag-multiple"></i> Album Name</label>
