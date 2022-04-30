@@ -33,6 +33,7 @@ class CreateUsersTable extends Migration
             $table->string('facebook')->nullable();
             $table->string('instagram')->nullable();
 
+            $table->boolean('isArtist')->default(false);
             $table->boolean('isStaff')->default(false);
             $table->boolean('isDeveloper')->default(false);
             $table->boolean('isVerified')->default(false);
